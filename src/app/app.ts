@@ -1,11 +1,11 @@
 import { Component, signal } from '@angular/core';
-import { Etudiant } from './etudiant/etudiant';
+import { Student } from './student/student';
 
 @Component({
-  imports: [Etudiant],
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
+  imports: [Student],
 })
 export class App {
   protected readonly nomSeance = signal(`Module Champ d'applications`);
@@ -13,4 +13,5 @@ export class App {
   protected readonly resumeSeance = signal(
     `Prise en main d'Angular, premier application.`,
   );
+
 }
