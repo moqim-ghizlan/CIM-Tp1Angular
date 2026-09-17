@@ -24,4 +24,5 @@ export class App {
   rendTousPres(): void {
     console.log('Tous les étudiants sont présents.');
   }
+
 }

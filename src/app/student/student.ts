@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, signal } from '@angular/core';
 
 @Component({
   imports: [],
@@ -7,9 +7,12 @@ import { Component } from '@angular/core';
   templateUrl: './student.html',
 })
 export class Student {
-  firstName = 'fname';
-  lastName = 'lname';
-  status = "Absent";
+  @Input() firstName = 'fname';
+  @Input() lastName = 'lname';
+  @Input() stats = 'Absent';
+
+  @Input()
+
 
   setFirstName(name: string) {
     this.firstName = name;
@@ -19,12 +22,10 @@ export class Student {
     this.lastName = name;
   }
 
-  setStatus(status: string) {
-    this.status = status;
-  }
-  
+
   getFullName(): string {
     return `${this.firstName} ${this.lastName}`;
   }
+
 
 }
