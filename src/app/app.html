@@ -12,6 +12,9 @@
             <app-student></app-student>
             <app-student></app-student>
           </ul>
+          <button class="btn btn-success" [disabled]="!isAuth" (click)="rendTousPres()">
+            Tous présents
+          </button>
         </div>
       </div>
     </div>
