@@ -8,10 +8,12 @@
         <div class="col-xs-12">
           <h2>Liste étudiants</h2>
           <ul>
-            <app-student firstName="Alice" lastName="Martin" status="Absent"></app-student>
-            <app-student firstName="Bob" lastName="Durand" status="Absent"></app-student>
-            <app-student firstName="Claire" lastName="Petit" status="Absent"></app-student>
+            <app-student [firstName]="'Alice'" [lastName]="'Martin'" [stats]="'Absent'"></app-student>
+            <app-student [firstName]="'Bob'" [lastName]="'Durand'" [stats]="'Absent'"></app-student>
+            <app-student [firstName]="'Claire'" [lastName]="'Petit'" [stats]="'Absent'"></app-student>
           </ul>
+          <input type="text" [(ngModel)]="seanceComment" placeholder="Comment">
+          <p>{{ seanceComment }}</p>
           <button class="btn btn-success" [disabled]="!isAuth" (click)="rendTousPres()">
             Tous présents
           </button>
