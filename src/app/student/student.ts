@@ -11,7 +11,8 @@ export class Student {
   @Input() lastName = 'lname';
   @Input() stats = 'Absent';
 
-  @Input()
+  @Input() comment = '--';
+
 
 
   setFirstName(name: string) {
@@ -25,6 +26,9 @@ export class Student {
 
   getFullName(): string {
     return `${this.firstName} ${this.lastName}`;
+  }
+  setComment(comment: string) {
+    this.comment = comment;
   }
 
 
