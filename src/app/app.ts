@@ -1,19 +1,20 @@
 import { Component, signal } from '@angular/core';
 import { Student } from './student/student';
 import { FormsModule } from '@angular/forms';
+import {NgFor, NgIf} from '@angular/common';
 
 @Component({
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
-  imports: [Student, FormsModule],
+  imports: [Student, FormsModule, NgFor, NgIf],
 })
 export class App {
   isAuth: boolean = false;
-  protected readonly nomSeance = signal(`Module Champ d'applications`);
-  protected readonly SeanceHint = signal('Séance TP 1');
+  protected readonly nomSeance = signal(`Module Angular`);
+  protected readonly SeanceHint = signal('CorrectionTP2');
   protected readonly resumeSeance = signal(
-    `Prise en main d'Angular, premier application.`,
+    `Gestion des données dynamiques (suite et fin) et structuration de documents.`,
   );
   seanceComment = '';
 

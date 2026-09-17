@@ -1,3 +1,19 @@
-<li class="card card-small">
-    <h4>Full name : <span class="fw-bold"> {{ getFullName() }} </span> -- Status : <span class="fw-bold"> {{ stats }} </span> -- Comment : <span class="fw-bold"> {{ comment }} </span></h4>
-</li>
+<div class="card crad-small d-flex flex-row gap-2 p-2">
+  <span class="text-primary">Last name : </span>
+  <span class=""> {{ lastName }} </span>
+
+  <span class="text-primary">First name : </span>
+  <span class=""> {{ firstName }} </span>
+
+  <span class="text-primary">Comment : </span>
+  <span class=""> {{ comment }} </span>
+
+  <span class="text-primary">Stats : </span>
+  <span class=""> {{ stats }} </span>
+  <span
+    *ngIf="stats === 'Absent'"
+    style="height: 20px; width: 20px; background-color: red"
+    else
+    style="height: 20px; width: 20px; background-color: green"
+  ></span>
+</div>
