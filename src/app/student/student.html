@@ -3,34 +3,39 @@
     'list-group-item-success': stats !== 'Absent',
     'list-group-item-danger': stats === 'Absent',
   }"
-  class="list-group-item d-flex flex-wrap gap-2"
+  class="list-group-item student-row"
 >
-  <span class="text-primary">Nom :</span>
-  <span>{{ lastName }}</span>
+  <div class="student-info">
+    <strong class="student-name">{{ firstName }} {{ lastName }}</strong>
+    <span class="student-comment">{{ comment }}</span>
+  </div>
 
-  <span class="text-primary">Prénom :</span>
-  <span>{{ firstName }}</span>
+  <div class="student-status">
+    <span class="status-label">{{ stats }}</span>
+    @if (absenceCount > 0) {
+      <small class="absence-count">Absent {{ absenceCount }} fois</small>
+    }
+    @if (lastUpdated) {
+      <small class="updated-at">Mis à jour le {{ lastUpdated }}</small>
+    }
+  </div>
 
-  <span class="text-primary">Commentaire :</span>
-  <span>{{ comment }}</span>
-
-  <span class="text-primary">Statut :</span>
-  <span>{{ stats }}</span>
-
-  <button
-    type="button"
-    class="btn btn-danger"
-    [disabled]="stats === 'Absent'"
-    (click)="setAbsent()"
-  >
-    Absent
-  </button>
-  <button
-    type="button"
-    class="btn btn-success"
-    [disabled]="stats !== 'Absent'"
-    (click)="setPresent()"
-  >
-    Présent
-  </button>
+  <div class="student-actions">
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-danger"
+      [disabled]="stats === 'Absent' || absentButtonDisabled"
+      (click)="setAbsent()"
+    >
+      Absent
+    </button>
+    <button
+      type="button"
+      class="btn btn-sm btn-outline-success"
+      [disabled]="stats !== 'Absent'"
+      (click)="setPresent()"
+    >
+      Présent
+    </button>
+  </div>
 </div>

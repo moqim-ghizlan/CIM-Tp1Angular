@@ -1,0 +1,71 @@
+.student-row {
+    align-items: center;
+    border-left: 4px solid transparent;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: minmax(180px, 1.4fr) minmax(150px, 1fr) auto;
+    padding: 0.8rem 1rem;
+}
+
+.list-group-item-success {
+    border-left-color: #198754;
+}
+
+.list-group-item-danger {
+    border-left-color: #dc3545;
+}
+
+.student-info,
+.student-status {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.student-name {
+    color: #212529;
+    font-size: 1rem;
+}
+
+.student-comment,
+.updated-at,
+.absence-count {
+    color: #6c757d;
+    font-size: 0.8rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.status-label {
+    color: #343a40;
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.student-actions {
+    display: flex;
+    gap: 0.4rem;
+}
+
+@media (max-width: 576px) {
+    .student-row {
+        gap: 0.6rem;
+        grid-template-columns: 1fr auto;
+    }
+
+    .student-status {
+        grid-column: 1 / -1;
+        grid-row: 2;
+    }
+
+    .student-actions {
+        grid-column: 1 / -1;
+        grid-row: 3;
+    }
+}
+
+.absence-count {
+    color: #842029;
+    font-weight: 600;
+}

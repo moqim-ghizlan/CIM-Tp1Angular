@@ -13,6 +13,7 @@
         [lastName]="student.lastName"
         [stats]="student.stats"
         [comment]="student.comment"
+        (statsChange)="updateStudentStatus(student, $event)"
       ></app-student>
     </div>
   </div>

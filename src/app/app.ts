@@ -51,6 +51,10 @@ export class App {
     });
   }
 
+  updateStudentStatus(student: { stats: string }, status: string): void {
+    student.stats = status;
+  }
+
   constructor() {
     setTimeout(() => {
       this.isAuth = true;
