@@ -45,6 +45,12 @@ export class App {
     },
   ]
 
+  setAllPresent(): void {
+    this.students.forEach(student => {
+      student.stats = 'Présent';
+    });
+  }
+
   constructor() {
     setTimeout(() => {
       this.isAuth = true;

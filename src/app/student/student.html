@@ -16,4 +16,21 @@
 
   <span class="text-primary">Statut :</span>
   <span>{{ stats }}</span>
+
+  <button
+    type="button"
+    class="btn btn-danger"
+    [disabled]="stats === 'Absent'"
+    (click)="setAbsent()"
+  >
+    Absent
+  </button>
+  <button
+    type="button"
+    class="btn btn-success"
+    [disabled]="stats !== 'Absent'"
+    (click)="setPresent()"
+  >
+    Présent
+  </button>
 </div>

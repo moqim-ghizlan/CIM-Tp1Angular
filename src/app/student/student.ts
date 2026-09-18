@@ -33,6 +33,14 @@ export class Student {
     return this.stats === 'Absent' ? 'red' : 'black';
   }
 
+  setAbsent(): void {
+    this.stats = 'Absent';
+  }
+
+  setPresent(): void {
+    this.stats = 'Présent';
+  }
+
   setComment(comment: string) {
     this.comment = comment;
   }
