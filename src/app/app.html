@@ -6,24 +6,15 @@
       <h4 class="bg-info">{{ resumeSeance() }}</h4>
     </div>
     <h3>Liste des étudiants</h3>
-    <app-student
-      [firstName]="'Alice'"
-      [lastName]="'Martin'"
-      [stats]="'Absent'"
-      [comment]="seanceComment"
-    ></app-student>
-    <app-student
-      [firstName]="'Bob'"
-      [lastName]="'Durand'"
-      [stats]="'Absent'"
-      [comment]="seanceComment"
-    ></app-student>
-    <app-student
-      [firstName]="'Claire'"
-      [lastName]="'Petit'"
-      [stats]="'Absent'"
-      [comment]="seanceComment"
-    ></app-student>
+    <div class="list-group">
+      <app-student
+        *ngFor="let student of students"
+        [firstName]="student.firstName"
+        [lastName]="student.lastName"
+        [stats]="student.stats"
+        [comment]="student.comment"
+      ></app-student>
+    </div>
   </div>
   <div class="card-container mt-4">
     <input type="text" [(ngModel)]="seanceComment" placeholder="Comment" />

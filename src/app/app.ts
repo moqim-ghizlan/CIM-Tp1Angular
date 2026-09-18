@@ -1,13 +1,13 @@
 import { Component, signal } from '@angular/core';
 import { Student } from './student/student';
 import { FormsModule } from '@angular/forms';
-import {NgFor, NgIf} from '@angular/common';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-root',
   styleUrl: './app.css',
   templateUrl: './app.html',
-  imports: [Student, FormsModule, NgFor, NgIf],
+  imports: [Student, FormsModule, NgFor],
 })
 export class App {
   isAuth: boolean = false;
@@ -17,6 +17,33 @@ export class App {
     `Gestion des données dynamiques (suite et fin) et structuration de documents.`,
   );
   seanceComment = '';
+
+  students = [
+    {
+      firstName : "Dupont",
+      lastName : "Jean",
+      stats : "Absent",
+      comment : "test"
+    },
+    {
+      firstName : "Durand",
+      lastName : "Sophie",
+      stats : "Absent",
+      comment : "test"
+    },
+    {
+      firstName : "Martin",
+      lastName : "Alice",
+      stats : "Présent",
+      comment : "Disponible"
+    },
+    {
+      firstName : "Petit",
+      lastName : "Claire",
+      stats : "Présent",
+      comment : "En ligne"
+    },
+  ]
 
   constructor() {
     setTimeout(() => {

@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
-import { NgIf } from '@angular/common';
+import { NgClass } from '@angular/common';
 
 @Component({
-  imports: [NgIf],
+  imports: [NgClass],
   selector: 'app-student',
   styleUrl: './student.css',
   templateUrl: './student.html',
@@ -28,6 +28,11 @@ export class Student {
   getFullName(): string {
     return `${this.firstName} ${this.lastName}`;
   }
+
+  getColorEtu(): string {
+    return this.stats === 'Absent' ? 'red' : 'black';
+  }
+
   setComment(comment: string) {
     this.comment = comment;
   }

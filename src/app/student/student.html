@@ -1,19 +1,19 @@
-<div class="card crad-small d-flex flex-row gap-2 p-2">
-  <span class="text-primary">Last name : </span>
-  <span class=""> {{ lastName }} </span>
+<div
+  [ngClass]="{
+    'list-group-item-success': stats !== 'Absent',
+    'list-group-item-danger': stats === 'Absent',
+  }"
+  class="list-group-item d-flex flex-wrap gap-2"
+>
+  <span class="text-primary">Nom :</span>
+  <span>{{ lastName }}</span>
 
-  <span class="text-primary">First name : </span>
-  <span class=""> {{ firstName }} </span>
+  <span class="text-primary">Prénom :</span>
+  <span>{{ firstName }}</span>
 
-  <span class="text-primary">Comment : </span>
-  <span class=""> {{ comment }} </span>
+  <span class="text-primary">Commentaire :</span>
+  <span>{{ comment }}</span>
 
-  <span class="text-primary">Stats : </span>
-  <span class=""> {{ stats }} </span>
-  <span
-    *ngIf="stats === 'Absent'"
-    style="height: 20px; width: 20px; background-color: red"
-    else
-    style="height: 20px; width: 20px; background-color: green"
-  ></span>
+  <span class="text-primary">Statut :</span>
+  <span>{{ stats }}</span>
 </div>
